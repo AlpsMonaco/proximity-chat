@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "proximity-chat/message";
+
+package message;
+
+service Chat {
+    rpc NewNode (stream NodeRequest) returns (stream NodeReply){ }
+}
+
+message NodeRequest {
+    string msg = 1;
+}
+
+message NodeReply {
+    string msg = 1;
+}
