@@ -21,6 +21,7 @@ func main() {
 	minPort := config.GetConfig().GetMinPort()
 	maxPort := config.GetConfig().GetMaxPort()
 	discover.SetServiceCIDR(config.GetConfig().GetCIDR())
+	discover.SetServiceIP(config.GetConfig().GetIP())
 	if minPort > maxPort {
 		minPort = maxPort
 	}

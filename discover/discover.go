@@ -15,22 +15,33 @@ import (
 	"google.golang.org/grpc/credentials/insecure"
 )
 
+var serviceCIDR string = ""
 var serviceIP string = ""
 var servicePort = 0
 var writer service.MessageWriter = nil
 
-func SetServiceCIDR(ip string) {
-	serviceIP = ip
+func SetServiceCIDR(cidr string) {
+	serviceCIDR = cidr
 }
+
 func SetServicePort(port int) {
 	servicePort = port
+}
+
+func SetServiceIP(ip string) {
+	serviceIP = ip
 }
 
 func GetServiceIP() string {
 	return serviceIP
 }
+
 func GetServicePort() int {
 	return servicePort
+}
+
+func GetServiceCIDR() string {
+	return serviceCIDR
 }
 
 func GetAddr() string {
